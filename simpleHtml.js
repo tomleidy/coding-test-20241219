@@ -56,7 +56,9 @@ class Tag {
         return openString;
     }
     getTagCloseString() {
-        return `</${this.name}>\n`
+        let closeString = `</${this.name}>`;
+        if (this.indent && this.indent > 0) closeString += "\n"
+        return closeString;
     }
 
     getTextString() {
